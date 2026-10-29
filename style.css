@@ -2,92 +2,459 @@
   box-sizing: border-box;
 }
 
-html, body {
-  min-height: 100%;
-  margin: 0;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  display: grid;
-  min-height: 100vh;
-  place-items: center;
-  padding: 32px 20px;
-  background-color: #f5f8f2;
-  background-image: radial-gradient(#d5e4d8 1px, transparent 1px);
-  background-size: 22px 22px;
-  color: #23332f;
+  margin: 0;
+  background: #eaf2ed;
+  color: #1d312c;
   font-family: "Trebuchet MS", Verdana, sans-serif;
 }
 
-.intro {
-  width: min(100%, 620px);
-  padding: clamp(30px, 8vw, 64px);
-  border: 1px solid #dce8dd;
-  border-top: 6px solid #e58b60;
-  background: #fffefa;
-  box-shadow: 12px 12px 0 #dce8dd;
+:root {
+  color-scheme: light;
+  --ink: #1d312c;
+  --muted: #65756e;
+  --green: #245b4d;
+  --coral: #e4765b;
+  --line: #cbd9d1;
+  --paper: #f7faf6;
+}
+
+.page-shell {
+  width: min(100% - 64px, 1180px);
+  margin: 0 auto;
+}
+
+.site-header {
+  display: flex;
+  min-height: 82px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+}
+
+.wordmark-icon {
+  display: grid;
+  width: 34px;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.wordmark-divider {
+  padding: 0 3px;
+  color: var(--coral);
+}
+
+.header-note,
+.site-footer,
+.artist-label,
+.hero-image figcaption,
+.hero-side-note {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.header-note {
+  margin: 0;
+  color: var(--muted);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 620px;
+  grid-template-columns: 1fr 0.92fr;
+  align-items: center;
+  gap: clamp(38px, 7vw, 100px);
+  padding: 68px 54px 84px 40px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
-  margin: 0 0 18px;
-  color: #527b6b;
-  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 26px;
+  color: var(--green);
+  font-size: 0.69rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.eyebrow-line {
+  width: 28px;
+  height: 2px;
+  background: var(--coral);
+}
+
+h1,
+h2,
+.hobby-name {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(2.7rem, 12vw, 5rem);
-  line-height: 1;
+  font-size: clamp(4rem, 7.6vw, 6.9rem);
+  letter-spacing: 0;
+  line-height: 0.98;
 }
 
-h1 span {
-  color: #d66e49;
+.period {
+  color: var(--coral);
 }
 
 .welcome {
-  margin: 22px 0 10px;
-  font-size: 1.3rem;
+  margin: 30px 0 8px;
+  color: var(--green);
+  font-size: 1.22rem;
   font-weight: 700;
 }
 
 .description {
-  max-width: 440px;
   margin: 0;
-  color: #53645d;
-  font-size: 1rem;
-  line-height: 1.7;
+  max-width: 390px;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+
+.explore-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--green);
+  color: var(--green);
+  font-size: 0.86rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.explore-link span {
+  color: var(--coral);
+  font-size: 1.15rem;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: min(54vw, 500px);
+  min-height: 360px;
+  margin: 0;
+  background: #bdc9c1;
+}
+
+.hero-image::before {
+  position: absolute;
+  z-index: -1;
+  top: 18px;
+  right: -18px;
+  bottom: -18px;
+  left: 18px;
+  background: #d8a34f;
+  content: "";
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-image figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 17px 19px;
+  background: rgb(29 49 44 / 84%);
+  color: white;
+  font-size: 0.62rem;
+}
+
+.hero-side-note {
+  position: absolute;
+  right: 0;
+  bottom: 38px;
+  color: var(--green);
+  writing-mode: vertical-rl;
 }
 
 .interests {
-  margin-top: 36px;
-  padding-top: 24px;
-  border-top: 1px solid #dce8dd;
+  padding: 74px 40px 78px;
+  background: var(--paper);
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 35px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 13px;
 }
 
 h2 {
-  margin: 0 0 16px;
-  font-size: 1.1rem;
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  line-height: 1.08;
 }
 
-.interests ul {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+.hobby-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   margin: 0;
   padding: 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
   list-style: none;
 }
 
-.interests li {
-  display: inline-flex;
+.hobby-item {
+  position: relative;
+  display: flex;
+  min-height: 138px;
   align-items: center;
-  gap: 9px;
-  padding: 10px 14px;
-  border: 1px solid #dce8dd;
-  background: #f5f8f2;
+  gap: 17px;
+  padding: 24px 23px;
+}
+
+.hobby-item + .hobby-item {
+  border-left: 1px solid var(--line);
+}
+
+.hobby-number {
+  align-self: flex-start;
+  padding-top: 4px;
+  color: var(--coral);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.hobby-name {
+  font-size: clamp(1.45rem, 2.8vw, 2.1rem);
+}
+
+.hobby-symbol {
+  margin-left: auto;
+  color: var(--green);
+  font-size: 1.75rem;
+}
+
+.game-symbol {
+  display: grid;
+  width: 31px;
+  height: 31px;
+  place-items: center;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  font-size: 1.3rem;
+}
+
+.swim-symbol {
+  color: #4589a0;
+  font-size: 2.25rem;
+}
+
+.artist-note {
+  position: relative;
+  display: flex;
+  min-height: 130px;
+  align-items: center;
+  gap: 24px;
+  margin: 34px 0 0;
+  padding: 26px 35px;
+  overflow: hidden;
+  background: var(--green);
+  color: white;
+}
+
+.artist-label {
+  flex: 0 0 auto;
+  color: #d5e8a4;
+}
+
+.artist-note p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 3vw, 1.9rem);
+}
+
+.artist-note strong {
+  color: #f1c976;
+  font-weight: 400;
+}
+
+.artist-spark {
+  position: absolute;
+  right: 28px;
+  color: rgb(255 255 255 / 13%);
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.site-footer {
+  display: flex;
+  min-height: 90px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.62rem;
+}
+
+.site-footer a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+@media (max-width: 760px) {
+  .page-shell {
+    width: min(100% - 40px, 600px);
+  }
+
+  .header-note {
+    max-width: 145px;
+    font-size: 0.56rem;
+    line-height: 1.6;
+    text-align: right;
+  }
+
+  .hero {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 42px;
+    padding: 58px 8px 76px;
+  }
+
+  h1 {
+    font-size: clamp(4rem, 14vw, 6.4rem);
+  }
+
+  .hero-image {
+    width: calc(100% - 18px);
+    height: min(105vw, 480px);
+    min-height: 300px;
+  }
+
+  .hero-side-note {
+    right: 0;
+    bottom: 35px;
+  }
+
+  .interests {
+    padding: 52px 25px 36px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .hobby-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-item {
+    min-height: 96px;
+    padding: 18px 8px;
+  }
+
+  .hobby-item + .hobby-item {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .hobby-name {
+    font-size: 1.8rem;
+  }
+
+  .artist-note {
+    min-height: 145px;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 11px;
+    padding: 25px;
+  }
+
+  .artist-spark {
+    right: 13px;
+    bottom: 10px;
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .page-shell {
+    width: min(100% - 30px, 600px);
+  }
+
+  .wordmark {
+    gap: 7px;
+    font-size: 0.61rem;
+  }
+
+  .header-note {
+    max-width: 115px;
+    font-size: 0.5rem;
+  }
+
+  .hero-image figcaption {
+    gap: 10px;
+    font-size: 0.52rem;
+  }
+
+  .interests {
+    padding-right: 19px;
+    padding-left: 19px;
+  }
+
+  .artist-note p {
+    max-width: 220px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
   font-weight: 700;
 }
 

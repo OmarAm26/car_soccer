@@ -4,27 +4,72 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Meet Omar, a laid-back person who enjoys guitar, gaming, and swimming.">
-    <title>Omar | A Little About Me</title>
+    <meta name="theme-color" content="#eaf2ed">
+    <title>Omar | Easygoing by Nature</title>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <main class="intro">
-      <p class="eyebrow">A little about me</p>
-      <h1>Hi, I'm <span>Omar.</span></h1>
-      <p class="welcome">A laid-back, cool human being.</p>
-      <p class="description">I enjoy playing guitar, gaming, and swimming.</p>
+    <div class="page-shell" id="top">
+      <header class="site-header">
+        <a class="wordmark" href="#top" aria-label="Omar's page, back to top">
+          <span class="wordmark-icon" aria-hidden="true">O</span>
+          <span>OMAR <span class="wordmark-divider">/</span> PERSONAL PAGE</span>
+        </a>
+        <p class="header-note">GOOD MUSIC · GOOD WATER · GOOD GAMES</p>
+      </header>
 
-      <section class="interests" aria-labelledby="interests-heading">
-        <h2 id="interests-heading">What I enjoy</h2>
-        <ul>
-          <li><span class="interest-mark" aria-hidden="true">♪</span> Playing guitar</li>
-          <li><span class="interest-mark" aria-hidden="true">+</span> Gaming</li>
-          <li><span class="interest-mark" aria-hidden="true">~</span> Swimming</li>
-        </ul>
-        <p class="signoff">Fun fact: My favorite artist is John Mayer.</p>
-      </section>
+      <main>
+        <section class="hero" aria-labelledby="hero-heading">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span> A LITTLE INTRODUCTION</p>
+            <h1 id="hero-heading">Easygoing<br>by nature<span class="period">.</span></h1>
+            <p class="welcome">Hey, I'm Omar.</p>
+            <p class="description">A laid-back, cool human being who enjoys guitar, gaming, and swimming.</p>
+            <a class="explore-link" href="#interests">A few things I enjoy <span aria-hidden="true">↓</span></a>
+          </div>
 
-      <p class="signoff">Thanks for stopping by!</p>
+          <figure class="hero-image">
+            <img src="https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="A guitarist playing beneath warm stage lights" fetchpriority="high">
+            <figcaption><span>ON REPEAT</span><span>GUITAR · 01 / 03</span></figcaption>
+          </figure>
+          <p class="hero-side-note" aria-hidden="true">TAKE IT EASY</p>
+        </section>
+
+        <section class="interests" id="interests" aria-labelledby="interests-heading">
+          <div class="section-heading">
+            <p class="eyebrow"><span class="eyebrow-line"></span> OFF THE CLOCK</p>
+            <h2 id="interests-heading">Things I enjoy<span class="period">.</span></h2>
+          </div>
+          <ul class="hobby-list">
+            <li class="hobby-item">
+              <span class="hobby-number">01</span>
+              <span class="hobby-name">Guitar</span>
+              <span class="hobby-symbol" aria-hidden="true">♪</span>
+            </li>
+            <li class="hobby-item">
+              <span class="hobby-number">02</span>
+              <span class="hobby-name">Gaming</span>
+              <span class="hobby-symbol game-symbol" aria-hidden="true">+</span>
+            </li>
+            <li class="hobby-item">
+              <span class="hobby-number">03</span>
+              <span class="hobby-name">Swimming</span>
+              <span class="hobby-symbol swim-symbol" aria-hidden="true">~</span>
+            </li>
+          </ul>
+        </section>
+
+        <aside class="artist-note" aria-label="Fun fact">
+          <span class="artist-label">A FUN FACT</span>
+          <p>My favorite artist is <strong>John Mayer.</strong></p>
+          <span class="artist-spark" aria-hidden="true">✳</span>
+        </aside>
+      </main>
+
+      <footer class="site-footer">
+        <span>THANKS FOR STOPPING BY</span>
+        <a href="#top">BACK TO TOP ↑</a>
+      </footer>
     </main>
   </body>
 </html>
