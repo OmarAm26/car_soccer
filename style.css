@@ -1,7 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
 html, body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 32px 20px;
+  background-color: #f5f8f2;
+  background-image: radial-gradient(#d5e4d8 1px, transparent 1px);
+  background-size: 22px 22px;
+  color: #23332f;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.intro {
+  width: min(100%, 620px);
+  padding: clamp(30px, 8vw, 64px);
+  border: 1px solid #dce8dd;
+  border-top: 6px solid #e58b60;
+  background: #fffefa;
+  box-shadow: 12px 12px 0 #dce8dd;
+}
+
+.eyebrow {
+  margin: 0 0 18px;
+  color: #527b6b;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.7rem, 12vw, 5rem);
+  line-height: 1;
+}
+
+h1 span {
+  color: #d66e49;
+}
+
+.welcome {
+  margin: 22px 0 10px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.description {
+  max-width: 440px;
+  margin: 0;
+  color: #53645d;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.interests {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid #dce8dd;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+}
+
+.interests ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
-canvas {
-  display: block;
+
+.interests li {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 14px;
+  border: 1px solid #dce8dd;
+  background: #f5f8f2;
+  font-weight: 700;
+}
+
+.interest-mark {
+  color: #d66e49;
+  font-size: 1.1rem;
+}
+
+.signoff {
+  margin: 36px 0 0;
+  color: #527b6b;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+@media (max-width: 420px) {
+  .intro {
+    box-shadow: 7px 7px 0 #dce8dd;
+  }
+
+  .interests ul {
+    flex-direction: column;
+  }
 }
